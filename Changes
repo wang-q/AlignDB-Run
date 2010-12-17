@@ -1,0 +1,5 @@
+Revision history for {{$dist->name}}
+
+0.01   Sun Jul 19 18:11:46 2009
+       Rename Class_excel.pm to AlignDB::Excel.pm
+
