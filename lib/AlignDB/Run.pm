@@ -13,7 +13,7 @@ run in parallel mode
 
 =cut
 
-has parallel => ( is => 'rw', isa => 'Int', default => 4, );
+has parallel => ( is => 'rw', isa => 'Int', default => sub {4}, );
 
 =attr jobs
 
@@ -21,7 +21,7 @@ All jobs to be done
 
 =cut
 
-has jobs => ( is => 'rw', isa => 'ArrayRef', default => sub { [] } );
+has jobs => ( is => 'rw', isa => 'ArrayRef', default => sub { [] }, );
 
 =attr code
 
@@ -41,15 +41,8 @@ has opt => ( is => 'rw', isa => 'HashRef', default => sub { {} } );
 
 =method BUILD
 
-      Usage : $obj->BUILD
-    Purpose : Init POE session
-    Returns : None
- Parameters : None
-     Throws : no exceptions
-   Comments : The BUILD method is called by Moose::Object::BUILDALL, which is
-            : called by Moose::Object::new. So it is also the constructor
-            : method. 
-   See Also : n/a
+$obj->BUILD
+Init POE session
 
 =cut
 
