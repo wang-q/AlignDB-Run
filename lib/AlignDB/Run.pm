@@ -1,50 +1,15 @@
 package AlignDB::Run;
-
-# ABSTRACT: Run in parallel mode without pains.
-
 use Moose;
 use POE;
 use POE::Wheel::Run;
 use POE::Filter::Line;
 
-=attr parallel
+our $VERSION = '1.0.0';
 
-run in parallel mode
-
-=cut
-
-has parallel => ( is => 'rw', isa => 'Int', default => sub {4}, );
-
-=attr jobs
-
-All jobs to be done
-
-=cut
-
-has jobs => ( is => 'rw', isa => 'ArrayRef', default => sub { [] }, );
-
-=attr code
-
-code ref
-
-=cut
-
+has parallel => ( is => 'rw', isa => 'Int',      default => sub {4}, );
+has jobs     => ( is => 'rw', isa => 'ArrayRef', default => sub { [] }, );
 has code => ( is => 'rw', isa => 'CodeRef', required => 1 );
-
-=attr opt
-
-hash ref
-
-=cut
-
 has opt => ( is => 'rw', isa => 'HashRef', default => sub { {} } );
-
-=method BUILD
-
-$obj->BUILD
-Init POE session
-
-=cut
 
 sub BUILD {
     my $self = shift;
@@ -67,12 +32,6 @@ sub BUILD {
         },
     );
 }
-
-=method run
-
-Start run your code
-
-=cut
 
 sub run {
 
@@ -136,3 +95,66 @@ sub _sig_child {
 
 __END__
 
+=pod
+
+=encoding UTF-8
+
+=head1 NAME
+
+AlignDB::Run - Run in parallel without pains.
+
+=head1 SYNOPSIS
+
+    use AlignDB::Run;
+
+    my $worker = sub {
+        my $job = shift;
+
+        print "$job\n";
+        return;
+    };
+
+    my $run = AlignDB::Run->new(
+        parallel => 4,
+        jobs     => [1 .. 8],
+        code     => $worker,
+        opt      => {foo => "bar",}
+    );
+    $run->run;
+
+=head1 ATTRIBUTES
+
+=head2 parallel
+
+run in parallel mode
+
+=head2 jobs
+
+All jobs to be done
+
+=head2 code
+
+code ref
+
+=head2 opt
+
+hash ref
+
+=head1 METHODS
+
+=head2 run
+
+Start run your code
+
+=head1 AUTHOR
+
+Qiang Wang <wang-q@outlook.com>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2009- by Qiang Wang.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut

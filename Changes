@@ -1,5 +1,7 @@
-Revision history for {{$dist->name}}
+Revision history for AlignDB-Run
+
+{{$NEXT}}
+    - Switch to Dist::Milla
 
 0.01   Sun Jul 19 18:11:46 2009
-       Rename Class_excel.pm to AlignDB::Excel.pm
-
+    - Initial commit

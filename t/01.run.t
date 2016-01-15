@@ -1,7 +1,3 @@
-#!/usr/bin/perl
-use strict;
-use warnings;
-
 use Test::More tests => 2;
 
 BEGIN {
@@ -18,7 +14,7 @@ my $code = sub {
 };
 
 my $run = AlignDB::Run->new(
-    parallel => 8,
+    parallel => 4,
     jobs     => $jobs,
     code     => $code,
 );
