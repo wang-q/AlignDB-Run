@@ -4,7 +4,7 @@ use POE;
 use POE::Wheel::Run;
 use POE::Filter::Line;
 
-our $VERSION = '1.0.0';
+our $VERSION = '1.0.1';
 
 has parallel => ( is => 'rw', isa => 'Int',      default => sub {4}, );
 has jobs     => ( is => 'rw', isa => 'ArrayRef', default => sub { [] }, );
