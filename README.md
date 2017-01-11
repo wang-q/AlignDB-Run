@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/wang-q/AlignDB-Run.svg?branch=master)](https://travis-ci.org/wang-q/AlignDB-Run) [![Coverage Status](http://codecov.io/github/wang-q/AlignDB-Run/coverage.svg?branch=master)](https://codecov.io/github/wang-q/AlignDB-Run?branch=master) [![MetaCPAN Release](https://badge.fury.io/pl/AlignDB-Run.svg)](https://metacpan.org/release/AlignDB-Run)
 # NAME
 
 AlignDB::Run - Run in parallel without pains.
@@ -23,21 +24,13 @@ AlignDB::Run - Run in parallel without pains.
 
 # ATTRIBUTES
 
-## parallel
+`parallel` - run in parallel mode
 
-run in parallel mode
+`jobs` - All jobs to be done
 
-## jobs
+`code` - code ref
 
-All jobs to be done
-
-## code
-
-code ref
-
-## opt
-
-hash ref
+`opt` - hash ref
 
 # METHODS
 

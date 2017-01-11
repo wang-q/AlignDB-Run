@@ -1,4 +1,6 @@
-use Test::More tests => 2;
+use strict;
+use warnings;
+use Test::More;
 
 BEGIN {
     use_ok('AlignDB::Run');
@@ -20,4 +22,6 @@ my $run = AlignDB::Run->new(
 );
 $run->run;
 
-is scalar @$jobs, 0, "There should be no task lefted";
+is( scalar @$jobs, 0, "There should be no task lefted" );
+
+done_testing();

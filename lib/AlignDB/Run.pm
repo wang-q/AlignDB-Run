@@ -124,21 +124,13 @@ AlignDB::Run - Run in parallel without pains.
 
 =head1 ATTRIBUTES
 
-=head2 parallel
+C<parallel> - run in parallel mode
 
-run in parallel mode
+C<jobs> - All jobs to be done
 
-=head2 jobs
+C<code> - code ref
 
-All jobs to be done
-
-=head2 code
-
-code ref
-
-=head2 opt
-
-hash ref
+C<opt> - hash ref
 
 =head1 METHODS
 
