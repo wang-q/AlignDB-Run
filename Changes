@@ -2,6 +2,10 @@ Revision history for AlignDB-Run
 
 {{$NEXT}}
 
+1.0.2 2017-01-11T16:12:17Z
+    - Release to CPAN
+    - Travis CI
+
 1.0.1 2016-12-16T00:38:05Z
     - Switch to Minilla
 
