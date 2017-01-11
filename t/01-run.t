@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Output;
 
 BEGIN {
     use_ok('AlignDB::Run');
@@ -20,7 +21,12 @@ my $run = AlignDB::Run->new(
     jobs     => $jobs,
     code     => $code,
 );
-$run->run;
+
+stdout_like(
+    sub {$run->run},
+    qr{===Do task 26 out of 26===},
+    "Outputs"
+);
 
 is( scalar @$jobs, 0, "There should be no task lefted" );
 

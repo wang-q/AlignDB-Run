@@ -44,12 +44,13 @@
          "requires" : {
             "Moose" : "0",
             "POE" : "0",
-            "perl" : "5.008001"
+            "perl" : "5.010001"
          }
       },
       "test" : {
          "requires" : {
-            "Test::More" : "0.88"
+            "Test::More" : "0.88",
+            "Test::Output" : "0"
          }
       }
    },
